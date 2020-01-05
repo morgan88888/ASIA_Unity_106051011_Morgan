@@ -30,7 +30,6 @@ public class Hero : MonoBehaviour
         Attack();
     }
 
-    // 觸發碰撞時持續執行 (一秒直行約60次) 碰撞物件資訊
     private void OnTriggerStay(Collider other)
     {
         if (other.name == "target" && ani.GetCurrentAnimatorStateInfo(0).IsName("attack"))
@@ -56,11 +55,13 @@ public class Hero : MonoBehaviour
 
         ani.SetBool("run", v != 0);
     }
+
     private void Turn()
     {
-        float h = Input.GetAxis("Horizontal");    // A 左 -1、D 右 1、沒按 0
+        float h = Input.GetAxis("Horizontal");
         tran.Rotate(0, turn * h * Time.deltaTime, 0);
     }
+
     private void Attack()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
