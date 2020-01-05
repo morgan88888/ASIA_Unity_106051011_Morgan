@@ -18,10 +18,9 @@ public class Hero : MonoBehaviour
     public Transform tran;
     public Rigidbody rig;
     public Animator ani;
-    #endregion
-
     [Header("檢物品位置")]
     public Rigidbody rigCatch;
+    #endregion
 
     private void Update()
     {
